@@ -1,2 +1,6 @@
 # huffman-codes
-A system for encoding and decoding messages into binary with a variable length encoding scheme using Huffman trees.
+A system for encoding and decoding messages into binary with a variable length encoding scheme using Huffman trees
+
+The project is implemented using a functional approach in Common Lisp (CMUCL). The encoding scheme works by first creating a binary tree from the given message, with the symbols occurring most frequently in the message appearing closest to the root of the tree. Encoding a message is done by traversing the tree until the leaf containing each symbol of the message is discovered. Each time the left subtree of a node is visited, a 0 is appended to the binary, and each time the right subtree of a node is visited, a 1 is appended. Decoding is done in a similar manner, traversing the tree by visiting the left subtree of a node for every 0 in the binary and the right subtree for every 1. Every time a leaf is reached, the symbol contained in the leaf is appended to the message and traversal continues by returning to the root of the tree until the full message is reconstructed.
+
+To run the program, load huffman-codes.lisp, which in turn loads frequency-list.lisp and gives the user access to all functions needed to construct Huffman trees and encode and decode messages using the trees from the REPL prompt.
